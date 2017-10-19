@@ -67,7 +67,7 @@ var myApp;
             return _super !== null && _super.apply(this, arguments) || this;
         }
         Boot.prototype.preload = function () {
-            this.game.load.image("logo", "/assets/sprites/phaser.png");
+            this.game.load.image("logo", "/assets/sprites/logo.png");
         };
         Boot.prototype.create = function () {
             var bootLogo = this.game.add.image(this.game.width * 0.5, this.game.height * 0.5, "logo");

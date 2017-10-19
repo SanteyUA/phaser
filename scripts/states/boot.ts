@@ -3,7 +3,7 @@ module myApp {
     export class Boot extends Phaser.State {
 
         preload () {
-            this.game.load.image("logo", "/assets/sprites/phaser.png");
+            this.game.load.image("logo", "/assets/sprites/logo.png");
         }
 
         create () {
