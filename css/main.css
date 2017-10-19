@@ -1,4 +1,9 @@
 body {
-  color: white;
-  background-color: #56849e;
+  margin: 0;
+  padding: 0;
+}
+
+div {
+  margin: auto;
+  padding: auto;
 }
