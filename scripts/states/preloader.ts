@@ -1,13 +1,9 @@
-/// <reference path="boot.ts" />
-/// <reference path="game.ts" />
-
 module myApp {
 	
 	export class Preloader extends Phaser.State {
 		
 		preload () {
-			//add assets
-			//this.game.load.image("key", "path.to.image");
+			
 		}
 
 		create () {
