@@ -10,36 +10,8 @@ var __extends = (this && this.__extends) || (function () {
 })();
 var myApp;
 (function (myApp) {
-    var Preloader = /** @class */ (function (_super) {
-        __extends(Preloader, _super);
-        function Preloader() {
-            return _super !== null && _super.apply(this, arguments) || this;
-        }
-        Preloader.prototype.preload = function () {
-        };
-        Preloader.prototype.create = function () {
-            this.initStates();
-            this.setScale();
-            this.game.state.start("Boot");
-        };
-        Preloader.prototype.initStates = function () {
-            this.game.state.add("Boot", myApp.Boot);
-            this.game.state.add("Game", myApp.Game);
-        };
-        Preloader.prototype.setScale = function () {
-            this.game.scale.scaleMode = Phaser.ScaleManager.NO_SCALE;
-        };
-        return Preloader;
-    }(Phaser.State));
-    myApp.Preloader = Preloader;
-})(myApp || (myApp = {}));
-/// <reference path="states/Preloader.ts" />
-var myApp;
-(function (myApp) {
     var App = /** @class */ (function (_super) {
         __extends(App, _super);
-        // private phaserImage: Phaser.Sprite;
-        // private game: Phaser.Game;
         function App(width, height) {
             return _super.call(this, width, height, Phaser.AUTO, 'app', State) || this;
         }
@@ -93,4 +65,29 @@ var myApp;
         return Game;
     }(Phaser.State));
     myApp.Game = Game;
+})(myApp || (myApp = {}));
+var myApp;
+(function (myApp) {
+    var Preloader = /** @class */ (function (_super) {
+        __extends(Preloader, _super);
+        function Preloader() {
+            return _super !== null && _super.apply(this, arguments) || this;
+        }
+        Preloader.prototype.preload = function () {
+        };
+        Preloader.prototype.create = function () {
+            this.initStates();
+            this.setScale();
+            this.game.state.start("Boot");
+        };
+        Preloader.prototype.initStates = function () {
+            this.game.state.add("Boot", myApp.Boot);
+            this.game.state.add("Game", myApp.Game);
+        };
+        Preloader.prototype.setScale = function () {
+            this.game.scale.scaleMode = Phaser.ScaleManager.NO_SCALE;
+        };
+        return Preloader;
+    }(Phaser.State));
+    myApp.Preloader = Preloader;
 })(myApp || (myApp = {}));
