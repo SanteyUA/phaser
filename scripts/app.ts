@@ -1,24 +1,29 @@
-class myApp {
+/// <reference path="states/Preloader.ts" />
 
-  private phaserImage: Phaser.Sprite;
-  private game: Phaser.Game;
+module myApp
+{
 
-  	constructor(width: number, height: number) {
-      this.game = new Phaser.Game(width, height, Phaser.AUTO, 'app', { preload: this.preload, create: this.create });
+  class App extends Phaser.Game{
+
+    // private phaserImage: Phaser.Sprite;
+    // private game: Phaser.Game;
+
+    constructor(width: number, height: number) {
+      super(width, height, Phaser.AUTO, 'app', State);
     }
 
-    preload(): void {
-      this.game.load.image('phaserImage', 'assets/sprites/phaser.png');
+  }
+
+  class State extends Phaser.State {
+    
+    create() {
+      this.game.state.add("Preloader", Preloader, true);
     }
 
-    create(): void {
-      this.phaserImage = this.game.add.sprite(this.game.world.centerX, this.game.world.centerY, 'phaserImage');
-      this.phaserImage.anchor.setTo(0.5, 0.5);
-    }
+  }
 
+  window.onload = () => {
+    new App(1280, 720);
+  }
 
-}
-
-window.onload = () => {
-  var game = new myApp(800, 600);
 }
